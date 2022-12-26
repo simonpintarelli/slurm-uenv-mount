@@ -17,8 +17,8 @@ jobs:
           - 22.05.5
 
     env:
-      base_tag:     ghcr.io/eth-cscs/slurm-container-${{ matrix.version }}:latest
-      cache_tag:    ghcr.io/eth-cscs/cache_docker/slurm-uenv-mount-tester-${{ matrix.version }}:latest
+      base_tag:     ghcr.io/simonpintarelli/slurm-container-${{ matrix.version }}:latest
+      cache_tag:    ghcr.io/simonpintarelli/cache_docker/slurm-uenv-mount-tester-${{ matrix.version }}:latest
 
     steps:
     - uses: actions/checkout@v3
@@ -54,7 +54,7 @@ jobs:
           - 22.05.5
 
     container:
-      image: ghcr.io/eth-cscs/cache_docker/slurm-uenv-mount-tester-${{ matrix.version }}:latest
+      image: ghcr.io/simonpintarelli/cache_docker/slurm-uenv-mount-tester-${{ matrix.version }}:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
